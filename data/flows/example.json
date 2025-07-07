@@ -1,0 +1,49 @@
+{
+  "id": "example-flow-001",
+  "name": "Example Flow",
+  "description": "A simple example flow for demonstration",
+  "nodes": [
+    {
+      "id": "inject-1",
+      "type": "inject",
+      "name": "Manual Trigger",
+      "x": 100,
+      "y": 100,
+      "properties": {
+        "topic": "test",
+        "payload": "Hello, World!"
+      },
+      "inputs": 0,
+      "outputs": 1,
+      "wires": [["debug-1"]]
+    },
+    {
+      "id": "debug-1",
+      "type": "debug",
+      "name": "Debug Output",
+      "x": 300,
+      "y": 100,
+      "properties": {
+        "console": true,
+        "complete": "payload"
+      },
+      "inputs": 1,
+      "outputs": 0,
+      "wires": [[]]
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn-1",
+      "source": "inject-1",
+      "source_port": 0,
+      "target": "debug-1",
+      "target_port": 0
+    }
+  ],
+  "properties": {},
+  "created_at": "2025-01-01T00:00:00Z",
+  "updated_at": "2025-01-01T00:00:00Z",
+  "version": "1.0.0",
+  "active": false
+}
